@@ -3,6 +3,7 @@ package com.flyview.freecocktailbar.feature_cocktail.edit
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -21,35 +22,49 @@ import com.flyview.freecocktailbar.ui.theme.FreeCocktailBarTheme
 @Composable
 fun CocktailEditUi(component: CocktailEditComponent) {
 
-    val recipeName = component.name.collectAsState()
-    val recipeDescription = component.description.collectAsState()
+    val name = component.name.collectAsState()
+    val description = component.description.collectAsState()
+    val recipe = component.recipe.collectAsState()
 
     Scaffold(
         modifier = Modifier.fillMaxSize()
     ) { paddingValues ->
 
-        Column (
+        Column(
             modifier = Modifier.padding(paddingValues)
-        ){
+        ) {
             Column(
                 modifier = Modifier.fillMaxWidth()
             ) {
                 OutlinedTextField(
-                    value = recipeName.value,
-                    onValueChange = {},
+                    value = name.value,
+                    onValueChange = component::onNameChange,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(8.dp),
-                    label = { Text("Title") }
+                    label = { Text("Title") },
+                    supportingText = { Text("Add title") }
                 )
 
                 OutlinedTextField(
-                    value = recipeDescription.value,
-                    onValueChange = {},
+                    value = description.value,
+                    onValueChange = component::onDescriptionChange,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .heightIn(min = 50.dp)
+                        .padding(8.dp),
+                    label = { Text("Description") },
+                    supportingText = { Text("Optional field") }
+                )
+
+                OutlinedTextField(
+                    value = recipe.value,
+                    onValueChange = component::onRecipeChange,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(8.dp),
-                    label = { Text("Description") }
+                    label = { Text("Recipe") },
+                    supportingText = { Text("Optional field") }
                 )
             }
 

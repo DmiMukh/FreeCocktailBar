@@ -10,4 +10,8 @@ interface CocktailEditComponent {
 
     fun onSaveClick()
     fun onCancelClick()
+
+    fun onNameChange(newValue: String)
+    fun onDescriptionChange(newValue: String)
+    fun onRecipeChange(newValue: String)
 }
