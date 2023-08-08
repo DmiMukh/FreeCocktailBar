@@ -7,8 +7,8 @@ import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.essenty.parcelable.Parcelable
 import com.flyview.freecocktailbar.core.ComponentFactory
 import com.flyview.freecocktailbar.core.toStateFlow
-import com.flyview.freecocktailbar.feature_recipe.createRecipeFeatureDetailsComponent
-import com.flyview.freecocktailbar.feature_recipe.createRecipeFeatureListComponent
+import com.flyview.freecocktailbar.feature_cocktail.createRecipeFeatureDetailsComponent
+import com.flyview.freecocktailbar.feature_cocktail.createRecipeFeatureListComponent
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.parcelize.Parcelize
 

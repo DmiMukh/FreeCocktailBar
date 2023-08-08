@@ -1,20 +1,23 @@
-package com.flyview.freecocktailbar.feature_recipe.list
+package com.flyview.freecocktailbar.feature_cocktail.list
 
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FabPosition
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.flyview.freecocktailbar.ui.theme.FreeCocktailBarTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RecipeListUi(component: RecipeListComponent) {
+fun CocktailListUi(component: CocktailListComponent) {
 
     Scaffold(
         floatingActionButton = {
@@ -27,13 +30,21 @@ fun RecipeListUi(component: RecipeListComponent) {
         },
         floatingActionButtonPosition = FabPosition.Center
     ) { paddingValues ->
+        Column (
+            modifier = Modifier.padding(paddingValues)
+        ) {
+            Icon(
+                imageVector = Icons.Default.KeyboardArrowDown,
+                contentDescription = "add_recipe"
+            )
+        }
     }
 }
 
 @Composable
 fun RecipeListUiPreview(darkTheme: Boolean) {
     FreeCocktailBarTheme(darkTheme = darkTheme) {
-        RecipeListUi(FakeRecipeListComponent())
+        CocktailListUi(FakeCocktailListComponent())
     }
 }
 

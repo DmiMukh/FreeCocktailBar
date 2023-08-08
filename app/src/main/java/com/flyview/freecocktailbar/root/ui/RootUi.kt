@@ -8,8 +8,8 @@ import com.arkivanov.decompose.extensions.compose.jetpack.stack.animation.fade
 import com.arkivanov.decompose.extensions.compose.jetpack.stack.animation.plus
 import com.arkivanov.decompose.extensions.compose.jetpack.stack.animation.scale
 import com.arkivanov.decompose.extensions.compose.jetpack.stack.animation.stackAnimation
-import com.flyview.freecocktailbar.feature_recipe.details.RecipeDetailsUi
-import com.flyview.freecocktailbar.feature_recipe.list.RecipeListUi
+import com.flyview.freecocktailbar.feature_cocktail.details.CocktailDetailsUi
+import com.flyview.freecocktailbar.feature_cocktail.list.CocktailListUi
 
 @Composable
 fun RootContent(
@@ -24,8 +24,8 @@ fun RootContent(
         animation = stackAnimation(fade() + scale()),
     ) {
         when (val child = it.instance) {
-            is RootComponent.Child.Details -> RecipeDetailsUi(child.component)
-            is RootComponent.Child.List -> RecipeListUi(child.component)
+            is RootComponent.Child.Details -> CocktailDetailsUi(child.component)
+            is RootComponent.Child.List -> CocktailListUi(child.component)
         }
     }
 }
