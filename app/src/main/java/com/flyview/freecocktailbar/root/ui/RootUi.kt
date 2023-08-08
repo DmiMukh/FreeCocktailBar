@@ -9,6 +9,7 @@ import com.arkivanov.decompose.extensions.compose.jetpack.stack.animation.plus
 import com.arkivanov.decompose.extensions.compose.jetpack.stack.animation.scale
 import com.arkivanov.decompose.extensions.compose.jetpack.stack.animation.stackAnimation
 import com.flyview.freecocktailbar.feature_cocktail.details.CocktailDetailsUi
+import com.flyview.freecocktailbar.feature_cocktail.edit.CocktailEditUi
 import com.flyview.freecocktailbar.feature_cocktail.list.CocktailListUi
 
 @Composable
@@ -25,6 +26,7 @@ fun RootContent(
     ) {
         when (val child = it.instance) {
             is RootComponent.Child.Details -> CocktailDetailsUi(child.component)
+            is RootComponent.Child.Edit -> CocktailEditUi(child.component)
             is RootComponent.Child.List -> CocktailListUi(child.component)
         }
     }

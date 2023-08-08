@@ -1,8 +1,11 @@
 package com.flyview.freecocktailbar.feature_cocktail.edit
 
+import com.arkivanov.decompose.ComponentContext
 import kotlinx.coroutines.flow.MutableStateFlow
 
-class RealCocktailEditComponent: CocktailEditComponent {
+class RealCocktailEditComponent(
+    componentContext: ComponentContext
+): ComponentContext by componentContext, CocktailEditComponent {
 
     override val name = MutableStateFlow("")
     override val description = MutableStateFlow("")
